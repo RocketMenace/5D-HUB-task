@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "5d-hub-task"
+version = "0.1.0"
+description = ""
+authors = ["RocketMenace <grizzlygit777@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = {extras = ["standard"], version = "^0.115.9"}
+uvloop = "^0.21.0"
+pytest = "^8.3.4"
+httptools = "^0.6.4"
+httpx = "^0.28.1"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.9.9"
+isort = "^6.0.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
