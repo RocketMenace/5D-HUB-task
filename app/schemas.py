@@ -1,4 +1,6 @@
-from pydantic import BaseModel, ConfigDict
+
+
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class URLBase(BaseModel):
@@ -6,10 +8,10 @@ class URLBase(BaseModel):
 
 
 class URLIn(URLBase):
-    target_url: str
+    long_url: str
 
 
 class URL(URLBase):
-    model_config = ConfigDict(from_attributes=True)
-    id: int
-    shortened_url: str
+    model_config = ConfigDict(from_attributes=True, populate_by_name=True, arbitrary_types_allowed=True)
+    short_url: str
+    long_url: str

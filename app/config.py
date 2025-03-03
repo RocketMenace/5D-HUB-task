@@ -14,10 +14,13 @@ class GlobalConfig(BaseSettings):
 
 
 class DevConfig(GlobalConfig):
-    model_config = SettingsConfigDict(env_prefix="DEV_", env_file=".env", env_file_encoding="utf-8", extra="allow")
+    model_config = SettingsConfigDict(
+        env_prefix="DEV_", env_file=".env", env_file_encoding="utf-8", extra="allow"
+    )
     DATABASE_URL: str
     DATABASE_PORT: str
     DB_NAME: str
+
 
 class TestConfig(GlobalConfig):
     DB_FORCE_ROLL_BACK: bool = True
