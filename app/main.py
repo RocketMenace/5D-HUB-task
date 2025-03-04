@@ -1,8 +1,10 @@
-from fastapi import FastAPI
-from app.router import router
 from contextlib import asynccontextmanager
+
+from fastapi import FastAPI
 from motor.motor_asyncio import AsyncIOMotorClient
+
 from app.db import DATABASE_URL
+from app.router import router
 
 
 @asynccontextmanager

@@ -1,7 +1,9 @@
-from app.config import config
-from app import main
-from fastapi import Depends
 from typing import Annotated, Any
+
+from fastapi import Depends
+
+from app import main
+from app.config import config
 
 DATABASE_URL = (
     f"mongodb://{config.DATABASE_URL}:{config.DATABASE_PORT}/{config.DB_NAME}"

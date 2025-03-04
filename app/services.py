@@ -1,8 +1,8 @@
+from hashlib import md5
 from typing import Any
 
-from app.schemas import URLIn
-from hashlib import md5
 from app.db import SessionDep
+from app.schemas import URLIn
 
 
 async def create(url: URLIn, database: SessionDep) -> dict[str, Any]:

@@ -1,5 +1,3 @@
-
-
 from pydantic import BaseModel, ConfigDict, Field
 
 
@@ -12,6 +10,8 @@ class URLIn(URLBase):
 
 
 class URL(URLBase):
-    model_config = ConfigDict(from_attributes=True, populate_by_name=True, arbitrary_types_allowed=True)
+    model_config = ConfigDict(
+        from_attributes=True, populate_by_name=True, arbitrary_types_allowed=True
+    )
     short_url: str
     long_url: str
